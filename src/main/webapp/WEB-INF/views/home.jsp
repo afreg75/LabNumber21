@@ -5,12 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/style.css"/>
 <title>Lindo Coffee</title>
+
 </head>
-<body>
+<body >
 <h1>Bienvenidos a Lindo Coffee!</h1>
 <p><a href="/registration">Lindo Registration</a></p>
-<p><a href="/welcome">Welcome</a></p>
+
 
 </body>
 </html>

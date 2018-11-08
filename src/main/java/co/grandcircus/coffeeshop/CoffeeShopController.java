@@ -22,7 +22,8 @@ public class CoffeeShopController {
 				@RequestParam("firstname") String firstname, 
 				@RequestParam("lastname") String lastname,
 				@RequestParam("email") String email,
-				@RequestParam("coffeeList") String coffee )
+				@RequestParam("coffeeList") String coffee,
+				@RequestParam("checkbox") String checkbox)
 		{
 			
 			ModelAndView mv = new ModelAndView("welcome");
@@ -30,6 +31,8 @@ public class CoffeeShopController {
 			mv.addObject("lastname", lastname);
 			mv.addObject("email", email);
 			mv.addObject("favoritecoffee", coffee);
+			mv.addObject("checkbox", checkbox);
+			
 			
 						return mv;
 		}
