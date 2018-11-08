@@ -1,10 +1,6 @@
 @charset "ISO-8859-1";
 
 body{
-	background: "coffee.jpg";
-
-
-}
-h1{
-	color: red;
+	background-image = coffee.gif
+	background-size: 100%;
 }

@@ -5,9 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration</title>
-<link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body background="coffee.jpg">
 <a href="/">Home</a>
 
 	<center><p>Lindo Coffee</p>
@@ -24,8 +23,11 @@
 			Email address: <input name ="email"/></p>
 			<p>
 			
-  			<input type="checkbox" name="checkbox" value="Yes">Check if you want to be added to mailing list.<br>
+			<input type='checkbox'  name='checkbox' value='Not to be added' >Don't add  to mailing list.<br>
+  			<input type="checkbox" name="checkbox" value="Yes, to be added">Add to mailing list.<br>
+  			
 		</p>
+			
 		
 		<p>
              <label>What type of Coffee do you like? </label>
