@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+body{
+	background-image: url(/images/coffee.jpg);
+	background-size: 100%;
+}
+h1{
+	color:peachpuff;
+	font-size:50px
+}
+
+p{
+	color: peachpuff;
+}
