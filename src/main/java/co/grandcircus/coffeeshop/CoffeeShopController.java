@@ -45,7 +45,7 @@ public class CoffeeShopController {
 		
 			return mv;
 		}
-		@RequestMapping("/foods")
+		@RequestMapping("/menulist")
 		public ModelAndView listFood(@RequestParam(value="category", required=false) String category) {
 			ModelAndView mav = new ModelAndView("menulist");
 			if (category != null && !category.isEmpty()) {
