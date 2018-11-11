@@ -1,15 +1,22 @@
 package co.grandcircus.coffeeshop;
 
-public class MenuItem {
+public class Food {
 	
 	private String name;
+	private String price;
 	private String description;
-	private Integer price;
+	private String category;
 	
-	public MenuItem() {}
+	
+	public Food() {}
 
 	public String getName() {
 		return name;
+	}
+
+	public Food(String category) {
+		super();
+		this.category = category;
 	}
 
 	public void setName(String name) {
@@ -20,22 +27,24 @@ public class MenuItem {
 		return description;
 	}
 
-	public MenuItem(String name, String description, Integer price) {
+	public Food(String name, String category, String price, String description) {
 		super();
 		this.name = name;
-		this.description = description;
+		this.category= category;
 		this.price = price;
+		this.description = description;
+		
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public Integer getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
@@ -43,7 +52,14 @@ public class MenuItem {
 	public String toString() {
 		return "MenuItem [name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
-	
-	
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 
 }

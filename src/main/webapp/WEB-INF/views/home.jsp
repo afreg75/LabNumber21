@@ -11,8 +11,11 @@
 <link rel="stylesheet" href="style.css" />
 <div class = "container">
 	<body>
-<h1>Bienvenidos a Lindo Coffee!</h1>
-<p><a href="/registration">Lindo Registration</a></p>
+<h1><b>Bienvenidos a Lindo Coffee!</b></h1>
+<p><a class="btn btn-primary" href="/registration" role="button">Lindo Registration</a>
+</p>
+<p><a class="btn btn-primary" href="/menulist" role="button">Coffee List</a>
+</p>
 
 
 	</body>

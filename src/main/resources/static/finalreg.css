@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+body{
+	background-image: url(/images/heart.jpg);
+	background-size: 100%;
+}
+h1{
+	color: black;
+}
+p{
+	color: black;
+}

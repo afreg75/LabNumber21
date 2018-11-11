@@ -1,13 +1,39 @@
 @charset "ISO-8859-1";
 body{
 	background-image: url(/images/coffee.jpg);
-	background-size: 100%;
+	background-size: 100% 
 }
 h1{
 	color:peachpuff;
 	font-size:50px
+	}
+
+#form{
+	
+	color:peachpuff;
 }
 
 p{
-	color: peachpuff;
+	color: black;
 }
+
+input{
+width: 12em;
+float:left;
+text-align: center;
+margin-right: 0.5em;
+
+}
+
+label{
+width: 10em;
+float:left;
+text-align: center;
+margin-left: 0.5em;
+}
+
+
+
+
+
+

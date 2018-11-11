@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+body{
+	background-image: url(/images/beverage2.jpg);
+	background-size: 100%;
+}
+
+h2 {
+font-size: 20px;
+}
+th{
+	color: dodgerblue;
+}
+href{
+	
+	color:black;
+}
