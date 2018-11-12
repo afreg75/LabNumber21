@@ -52,6 +52,9 @@
 			<p><b>
 				Password: <input type="password" name="password" />
 			</b></p>
+			<p><b>
+				Confirm Password: <input type="password" name="passwordconf"/>
+			</b></p>
 			<p>
 				<b> <input type="checkbox" name="checkbox">Add to
 					mailing list.<br>
