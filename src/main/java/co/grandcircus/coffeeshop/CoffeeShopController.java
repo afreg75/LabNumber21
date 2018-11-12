@@ -11,7 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class CoffeeShopController {
 	
 		@Autowired
-		FoodService foodService;
+		FoodService list;
+		
+//		@Autowired
+//		Food food;
 	
 		@RequestMapping("/")
 		public ModelAndView index() {
@@ -45,15 +48,10 @@ public class CoffeeShopController {
 			return mv;
 		}
 		@RequestMapping("/menulist")
-		public ModelAndView listFood(@RequestParam(value="category", required=false) String category) {
+		public ModelAndView listFood() {
 			ModelAndView mav = new ModelAndView("menu-list");
-			if (category != null && !category.isEmpty()) {
-				mav.addObject("foods", foodService.getFoodsInCategory(category));
-				mav.addObject("category", category);
-			} else {
-				mav.addObject("foods", foodService.getAllFoods());
-			}
-			return mav;
+					mav.addObject("list", list.getAllFoods());
+					return mav;
 		}
 	}
 		

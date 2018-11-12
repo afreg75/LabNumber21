@@ -6,14 +6,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Menu List</title>
-</head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="menu.css" />
-<div class = "container">
+
+</head>
+
 <body>
+<div class = "container">
 	<a class="btn btn-primary btn-sm"  href="/">Home</a>
 	
-	<center><h1 id="lindo">Lindo Coffee</h1></center>
+	<h1 id="lindo" style = "align: center;">Lindo Coffee</h1>
 	
 	<h2>Menu List</h2>
 
@@ -31,17 +33,17 @@
 			<th>Price</th>
 			<th>Description</th>
 		</tr>
-		<c:forEach var="food" items="${ foods }">
+		<c:forEach var="food" items="${ list }">
 			<tr>
-				<td>${ menu.name }</td>
-				<td>${ menu.category }</td>
-				<td>${ menu.price }</td>
-				<td>${ menu.description }</td>
+				<td>${ food.name }</td>
+				<td>${ food.category }</td>
+				<td>${ food.price }</td>
+				<td>${ food.description }</td>
 			</tr>
 		</c:forEach>
 	</table>
 	<a class="btn btn-primary btn-sm" href="/add-coffee">Add Coffee</a>
-
-</body>
 </div>
+</body>
+
 </html>
