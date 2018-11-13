@@ -30,6 +30,7 @@
 
 			<th>Coffee & Merchandise</th>
 			<th>Category</th>
+			<th>Qty</th>
 			<th>Price</th>
 			<th>Description</th>
 		</tr>
@@ -37,6 +38,7 @@
 			<tr>
 				<td>${ food.name }</td>
 				<td>${ food.category }</td>
+				<td>${ food.qty }</td>
 				<td>${ food.price }</td>
 				<td>${ food.description }</td>
 			</tr>
