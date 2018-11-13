@@ -11,10 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class CoffeeShopController {
 	
 		@Autowired
-		FoodService list;
+		private MenuItemDao menuItemDao;
 		
-//		@Autowired
-//		Food food;
+		@Autowired 
+		private UserDao userDao;
+		
 	
 		@RequestMapping("/")
 		public ModelAndView index() {
@@ -30,27 +31,33 @@ public class CoffeeShopController {
 				@RequestParam("firstname") String firstname, 
 				@RequestParam("lastname") String lastname,
 				@RequestParam("email") String email,
-				@RequestParam("coffeeList") String coffee,
 				@RequestParam("phonenumber") String phonenumber,
-				@RequestParam("password") String password,				
-				@RequestParam(name = "checkbox" , required = false) boolean checkbox)				
+				@RequestParam("age")int age,
+				@RequestParam("password") String password,
+				@RequestParam(name = "checkbox" , required = false) boolean mail,
+				@RequestParam("coffeeList") String favCoffee)				
 			{
-			
+			Long id = null;
+			User user = new User(id,  firstname,  lastname,  email,  phonenumber,  age,
+					password, mail,favCoffee);
 			ModelAndView mv = new ModelAndView("welcome");
 			mv.addObject("firstname", firstname);
 			mv.addObject("lastname", lastname);
 			mv.addObject("email", email);
-			mv.addObject("favoritecoffee", coffee);
+			mv.addObject("favoritecoffee", favCoffee);
 			mv.addObject("phonenumber",  phonenumber);	
+			mv.addObject("age", age);
 			mv.addObject("password", password);
-			mv.addObject("checkbox", checkbox);
+			mv.addObject("mail", mail);
+			
+			userDao.create(user);
 		
 			return mv;
 		}
 		@RequestMapping("/menulist")
 		public ModelAndView listFood() {
 			ModelAndView mav = new ModelAndView("menu-list");
-					mav.addObject("list", list.getAllFoods());
+					mav.addObject("list", menuItemDao.findAll());
 					return mav;
 		}
 	}

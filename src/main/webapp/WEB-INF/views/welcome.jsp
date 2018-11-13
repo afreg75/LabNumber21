@@ -23,7 +23,7 @@
 <p>You will enjoy our Coffee! Your favorite coffee is ${favoritecoffee}</p>
 
 <a class = "btn btn-primary btn-xs"  href="/">Home</a>
-<a class = "btn btn-primary btn-xs"  href="/">MenuList</a>
+<a class = "btn btn-primary btn-xs"  href="/menulist">MenuList</a>
 </body>
 </div>
 </html>

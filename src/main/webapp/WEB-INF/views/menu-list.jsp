@@ -15,7 +15,7 @@
 <div class = "container">
 	<a class="btn btn-primary btn-sm"  href="/">Home</a>
 	
-	<h1 id="lindo" style = "align: center;">Lindo Coffee</h1>
+	<center><h1 id="lindo">Lindo Coffee</h1></center>
 	
 	<h2>Menu List</h2>
 
@@ -25,10 +25,10 @@
 		<button>Filter</button>
 	</form>
 
-	<table class="table table-sm">
+	<table  class="table table-sm">
 		<tr>
 
-			<th>Coffee</th>
+			<th>Coffee & Merchandise</th>
 			<th>Category</th>
 			<th>Price</th>
 			<th>Description</th>

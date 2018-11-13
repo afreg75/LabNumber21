@@ -2,22 +2,18 @@ package co.grandcircus.coffeeshop;
 
 public class Food {
 	
+	private Long id;
 	private String name;
 	private String category;
 	private String price;
 	private String description;
 	
-	public Food(String price) {
-		super();
-		this.price = price;
-	}
 
-	
-	
 	public Food() {}
 	
-	public Food(String name, String category, String price, String description) {
+	public Food(Long id, String name, String category, String price, String description) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.price = price;
@@ -50,7 +46,8 @@ public class Food {
 
 	@Override
 	public String toString() {
-		return "Food [name=" + name + ", category=" + category + "]";
+		return "Food [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", description="
+				+ description + "]";
 	}
 
 	public String getPrice() {
@@ -59,6 +56,18 @@ public class Food {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }
