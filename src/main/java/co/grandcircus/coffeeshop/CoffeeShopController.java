@@ -3,6 +3,7 @@ package co.grandcircus.coffeeshop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -93,6 +94,20 @@ public class CoffeeShopController {
 			menuItemDao.delete(id);
 			mav.addObject("list", menuItemDao.findAll());
 			return mav;
+		}
+		
+		@RequestMapping("/food/update")
+		public ModelAndView showEditForm(@RequestParam("id") Long id) {
+			ModelAndView mav = new ModelAndView("editmenuitem");
+			mav.addObject("food", menuItemDao.findById(id));
+			mav.addObject("title", "Edit Food");
+			return mav;
+		}
+		
+		@RequestMapping(value="/food/update", method=RequestMethod.POST)
+		public ModelAndView submitEditForm(Food food) {
+			menuItemDao.update(food);
+			return new ModelAndView("admin-menu-list");
 		}
 		
 		

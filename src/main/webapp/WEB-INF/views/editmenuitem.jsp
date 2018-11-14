@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h1>Menu Items</h1>
-		<h2>Add an item</h2>
+		<h2>Edit an item</h2>
 		<form action="/menuitems/edit" method="post">
 		<table class="table">
 			<tr>
@@ -37,6 +37,8 @@
 		</table>
 		<button type="submit" class="btn btn-primary">Edit</button>
 		<a class="btn link" href="/edit-coffee"></a>
+		
+		<a class="btn btn-primary" href="/admin/menulist" role="button">Cancel</a>
 		</form>
 	</div>
 </body>
