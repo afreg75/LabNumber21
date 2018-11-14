@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Menu List</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet"/>
+<link rel="stylesheet" href="menu.css" />
 
 </head>
 
@@ -43,7 +43,8 @@
 				<td>${ food.description }</td>
 			<td>
 						<a href="/food/update?id=${ food.id }" class="btn btn-light btn-sm">Edit</a>
-						<a href="/food/delete?id=${ food.id }" class="btn btn-light btn-sm">Delete</a>
+						<a href="/menuitems/delete?id=${ food.id }" class="btn btn-light btn-sm">Delete</a>
+						
 					</td>
 			</tr>
 		</c:forEach>

@@ -36,7 +36,8 @@
 			</tr>
 		</table>
 		<button type="submit" class="btn btn-primary">Add</button>
-		<a class="btn link" href="/add-coffee">Cancel</a>
+		<a class="btn link" href="/add-coffee"></a>
+		<a class="btn btn-primary" href="/admin/menulist" role="button">Cancel</a>
 		</form>
 	</div>
 </body>

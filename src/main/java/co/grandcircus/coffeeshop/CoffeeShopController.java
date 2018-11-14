@@ -46,6 +46,12 @@ public class CoffeeShopController {
 			ModelAndView mav = new ModelAndView("addmenuitem");
 					return mav;
 			}
+			
+//			@RequestMapping("add-coffee")
+//			public ModelAndView showAddForm() {
+//			ModelAndView mav = new ModelAndView("addmenuitem");
+//					return mav;
+//			}
 		
 		@RequestMapping("/welcome")
 		public ModelAndView showWelcome(
@@ -80,6 +86,13 @@ public class CoffeeShopController {
 			ModelAndView mav = new ModelAndView("menu-list");
 					mav.addObject("list", menuItemDao.findAll());
 					return mav;
+		}
+		@RequestMapping("/menuitems/delete")
+		public ModelAndView delete(@RequestParam("id") Long id) {
+			ModelAndView mav = new ModelAndView("admin-menu-list");
+			menuItemDao.delete(id);
+			mav.addObject("list", menuItemDao.findAll());
+			return mav;
 		}
 		
 		

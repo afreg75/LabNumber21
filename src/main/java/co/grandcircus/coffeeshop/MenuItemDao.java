@@ -27,4 +27,17 @@ public class MenuItemDao {
 	public void createFood(Food food) {
 		em.persist(food);
 	}
+	
+		public void delete(Long id) {
+		// Deleting with Hibernate entity manager requires fetching a reference first.
+		Food food = em.getReference(Food.class, id);
+		em.remove(food);
+	}
+		public Food findById(Long id) {
+			return em.find(Food.class, id);
+		}
+		
+		public void update(Food food) {
+			em.merge(food);
+		}
 }

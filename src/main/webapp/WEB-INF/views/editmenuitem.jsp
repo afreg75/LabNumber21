@@ -35,8 +35,8 @@
 				<td><input type="text"name="category" /></td>
 			</tr>
 		</table>
-		<button type="submit" class="btn btn-primary">Add</button>
-		
+		<button type="submit" class="btn btn-primary">Edit</button>
+		<a class="btn link" href="/edit-coffee"></a>
 		</form>
 	</div>
 </body>
