@@ -1,7 +1,18 @@
 package co.grandcircus.coffeeshop;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="menu_item")
 public class Food {
 	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
 	private String name;
 	private String category;

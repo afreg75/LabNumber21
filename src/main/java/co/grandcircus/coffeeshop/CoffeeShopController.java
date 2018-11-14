@@ -26,6 +26,27 @@ public class CoffeeShopController {
 		public ModelAndView showRegistrationForm() {
 			return new ModelAndView("registration");
 		}
+		
+		@RequestMapping("/admin/menulist")
+		public ModelAndView showAdminForm() {
+			ModelAndView mav = new ModelAndView("admin-menu-list");
+				mav.addObject("list", menuItemDao.findAll());
+				return mav;
+			}
+		@RequestMapping("/menuitems/add")
+		public ModelAndView showItem(Food food) {
+			ModelAndView mav = new ModelAndView("admin-menu-list");
+			menuItemDao.createFood(food);
+				mav.addObject("list", menuItemDao.findAll());
+				return mav;
+			}
+			
+			@RequestMapping("add-coffee")
+			public ModelAndView showAddForm() {
+			ModelAndView mav = new ModelAndView("addmenuitem");
+					return mav;
+			}
+		
 		@RequestMapping("/welcome")
 		public ModelAndView showWelcome(
 				@RequestParam("firstname") String firstname, 
@@ -60,6 +81,7 @@ public class CoffeeShopController {
 					mav.addObject("list", menuItemDao.findAll());
 					return mav;
 		}
-	}
 		
-	
+		
+		
+	}

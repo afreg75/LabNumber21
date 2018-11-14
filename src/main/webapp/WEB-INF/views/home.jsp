@@ -17,6 +17,7 @@
 </p>
 <p><a class="btn btn-primary" href="/menulist" role="button">Coffee List</a>
 </p>
+<p><a class="btn btn-primary" href="/admin/menulist" role="button">Administrator</a></p>
 
 	</div>
 	

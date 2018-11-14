@@ -80,7 +80,7 @@
 						<option value="Dark Roast">Dark Roast</option>
 						<option value="Decaf">Decaf</option>
 						<option value="I don't like coffee">I don't like coffee</option>
-				</select> <label>Select your coffee </label>
+				</select><font color="peachpuff"><label >Select your coffee </font></label>
 				</b>
 			</p>
 			<br>
