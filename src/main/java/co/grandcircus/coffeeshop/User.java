@@ -16,6 +16,7 @@ public class User {
 	private String email;
 	private String phonenumber;
 	private Integer age;
+	private String username;
 	private String password;
 	private boolean mail;
 	private String favCoffee;
@@ -27,7 +28,7 @@ public class User {
 
 
 	public User(Long id, String firstname, String lastname, String email, String phonenumber, Integer age,
-			String password, boolean mail, String favCoffee) {
+			String username, String password, boolean mail, String favCoffee) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -35,6 +36,7 @@ public class User {
 		this.email = email;
 		this.phonenumber = phonenumber;
 		this.age = age;
+		this.username= username;
 		this.password = password;
 		this.mail = mail;
 		this.favCoffee = favCoffee;
@@ -131,13 +133,22 @@ public class User {
 	}
 
 
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", phonenumber=" + phonenumber + ", age=" + age + ", password=" + password + ", mail=" + mail
-				+ ", favCoffee=" + favCoffee + "]";
+				+ ", phonenumber=" + phonenumber + ", age=" + age + ", username=" + username + ", password=" + password
+				+ ", mail=" + mail + ", favCoffee=" + favCoffee + "]";
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
-	
-
 }

@@ -13,31 +13,31 @@ import org.springframework.stereotype.Repository;
 //This means that a transaction is created every time a method runs here.
 @Transactional
 
-public class MenuItemDao {
+public class CartItemDao {
 	@PersistenceContext
 	private EntityManager em;
 
-	public List<MenuItem> findAll() {
+	public List<CartItem> findAll() {
 		// The SELECT clause is optional in HQL. If omitted, it's basically SELECT *.
 		// When creating a a query specify the type of the results: Food.class
 		// HQL queries use Java class and property names, not SQL table & column names.
-		return em.createQuery("FROM MenuItem", MenuItem.class).getResultList();
+		return em.createQuery("FROM CartItem", CartItem.class).getResultList();
 	}
 
-	public void createFood(MenuItem food) {
-		em.persist(food);
+	public void create(CartItem cartitem) {
+		em.persist(cartitem);
 	}
 	
 		public void delete(Long id) {
 		// Deleting with Hibernate entity manager requires fetching a reference first.
-		MenuItem food = em.getReference(MenuItem.class, id);
-		em.remove(food);
+		CartItem cartitem = em.getReference(CartItem.class, id);
+		em.remove(cartitem);
 	}
-		public MenuItem findById(Long id) {
-			return em.find(MenuItem.class, id);
+		public CartItem findById(Long id) {
+			return em.find(CartItem.class, id);
 		}
 		
-		public void update(MenuItem food) {
-			em.merge(food);
+		public void update(CartItem cartitem) {
+			em.merge(cartitem);
 		}
 }

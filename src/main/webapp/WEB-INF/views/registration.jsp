@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration</title>
+
 </head>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -21,9 +22,10 @@
 		<p id="form">
 			<b>Fill out the Form to receive Lindo Coffee!</b>
 		</p>
-		<form action="/welcome">
-
-
+		
+		
+		<form action="/welcome" method:"post">
+		
 			<p>
 				<b> First Name: <input name="firstname" placeholder="Firstname"
 					required minlength="2" maxlength="10"/>
@@ -54,12 +56,14 @@
 
 				</b>
 			</p>
-			
+			<p>
+				<b> Enter User Name:<input type="username" name="username" /></b></p>
 			<p><b>
 				Password: <input id="password" type="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							 title="Must contain at least one number and one uppercase and lowercase letter, 
 							 and at least 8 or more characters" required/>
 			</b></p>
+			
 			<p><b>
 				Confirm Password: <input id="passwordconf" type="password" name="passwordconf" oninput="check(this)">
 			</b></p>

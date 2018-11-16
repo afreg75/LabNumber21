@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name="menu_item")
-public class Food {
+public class MenuItem {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -21,7 +21,7 @@ public class Food {
 	private String description;
 	
 
-	public Food() {}
+	public MenuItem() {}
 
 
 	public Long getId() {
@@ -86,7 +86,7 @@ public class Food {
 	}
 
 
-	public Food(Long id, String name, String category, String qty, String price, String description) {
+	public MenuItem(Long id, String name, String category, String qty, String price, String description) {
 		super();
 		this.id = id;
 		this.name = name;

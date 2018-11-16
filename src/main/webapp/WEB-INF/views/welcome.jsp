@@ -16,14 +16,14 @@
 <p><b>${firstname} ${lastname}</b></p> 
 <p>Your email address is: ${email}</p>
 <p>Your phonenumber is: ${phonenumber}</p>
-
 <p>You have selected ${checkbox} to our mailing list.</p>
+
+<p> Your login id is: ${ username }</p>
 <p> Your password is: ${ password }</p>
 
 <p>You will enjoy our Coffee! Your favorite coffee is ${favoritecoffee}</p>
 
-<a class = "btn btn-primary btn-xs"  href="/">Home</a>
-<a class = "btn btn-primary btn-xs"  href="/menulist">MenuList</a>
+<a class = "btn btn-primary btn-xs"  href="/">Login</a>
 </body>
 </div>
 </html>

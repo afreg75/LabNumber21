@@ -1,20 +1,55 @@
 package co.grandcircus.coffeeshop;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
+//DAOs must be transactional in order to use the EntityManager to write.
+//This means that a transaction is created every time a method runs here.
+@Transactional
 public class UserDao {
 	
-	@Autowired
-	private JdbcTemplate jdbctemplate;
+	@PersistenceContext
+	private EntityManager em;
 	
-	public void create(User user) {
-		
-		String sql = "INSERT INTO user (id, firstname, lastname, email, phonenumber, age, password, mail, favcoffee) VALUES (?,?,?,?,?,?,?,?,?)";
-		jdbctemplate.update(sql, user.getId(),user.getFirstname(), user.getLastname(), user.getEmail(), 
-				user.getPhonenumber(), user.getAge(), user.getPassword(), user.isMail(), user.getFavCoffee());
-		
+	public User findById(Long id) {
+		return em.find(User.class, id);
+	}
+	
+	public User findByUsername(String username) {
+		try {
+			return em.createQuery("FROM User WHERE username = :username", User.class)
+					.setParameter("username", username)
+					.getSingleResult();
+		} catch (NoResultException ex) {
+			// No user with that username found.
+			return null;
+		}
+	}
+	public User findByGithubId(Long githubId) {
+		try {
+			return em.createQuery("FROM User WHERE githubId = :githubId", User.class)
+					.setParameter("githubId", githubId)
+					.getSingleResult();
+		} catch (NoResultException ex) {
+			// No user with that githubId found.
+			return null;
+		}
+	}	
+
+	public void createUser(User user) {
+		em.persist(user);
+	}
+	public void update(User user) {
+		em.merge(user);
 	}
 
 }

@@ -12,9 +12,14 @@
 
 <body>
 	<div class = "container">
+	<header>
+		<span><font color="peachpuff">
+			Hello ${ user.firstname } ${ user.lastname } 
+		</font></span>
+	</header>	
+	
 <h1><b>Bienvenidos a Lindo Coffee!</b></h1>
-<p><a class="btn btn-primary" href="/registration" role="button">Lindo Registration</a>
-</p>
+
 <p><a class="btn btn-primary" href="/menulist" role="button">Coffee List</a>
 </p>
 <p><a class="btn btn-primary" href="/admin/menulist" role="button">Administrator</a></p>

@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import co.grandcircus.coffeeshop.Food;
+import co.grandcircus.coffeeshop.MenuItem;
 
 
 @Repository
@@ -16,8 +16,8 @@ public class MenuItemDaoJDBC {
 	@Autowired
 	private JdbcTemplate jdbctemplate;
 	
-	public List<Food> findAll() {
+	public List<MenuItem> findAll() {
 		
-		return jdbctemplate.query("SELECT * FROM menu_item", new BeanPropertyRowMapper<>(Food.class));
+		return jdbctemplate.query("SELECT * FROM menu_item", new BeanPropertyRowMapper<>(MenuItem.class));
 	}
 }

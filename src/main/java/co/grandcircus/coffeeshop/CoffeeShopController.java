@@ -17,9 +17,16 @@ public class CoffeeShopController {
 		@Autowired 
 		private UserDao userDao;
 		
-	
+//		@Autowired
+//		private CartItemDao cartItemDao;
+		
 		@RequestMapping("/")
 		public ModelAndView index() {
+			return new ModelAndView("login");
+		}
+	
+		@RequestMapping("/home")
+		public ModelAndView showHome() {
 			return new ModelAndView("home");
 		}
 		
@@ -35,7 +42,7 @@ public class CoffeeShopController {
 				return mav;
 			}
 		@RequestMapping("/menuitems/add")
-		public ModelAndView showItem(Food food) {
+		public ModelAndView showItem(MenuItem food) {
 			ModelAndView mav = new ModelAndView("admin-menu-list");
 			menuItemDao.createFood(food);
 				mav.addObject("list", menuItemDao.findAll());
@@ -48,11 +55,6 @@ public class CoffeeShopController {
 					return mav;
 			}
 			
-//			@RequestMapping("add-coffee")
-//			public ModelAndView showAddForm() {
-//			ModelAndView mav = new ModelAndView("addmenuitem");
-//					return mav;
-//			}
 		
 		@RequestMapping("/welcome")
 		public ModelAndView showWelcome(
@@ -61,13 +63,14 @@ public class CoffeeShopController {
 				@RequestParam("email") String email,
 				@RequestParam("phonenumber") String phonenumber,
 				@RequestParam("age")int age,
+				@RequestParam("username") String username,
 				@RequestParam("password") String password,
 				@RequestParam(name = "checkbox" , required = false) boolean mail,
 				@RequestParam("coffeeList") String favCoffee)				
 			{
 			Long id = null;
 			User user = new User(id,  firstname,  lastname,  email,  phonenumber,  age,
-					password, mail,favCoffee);
+					username, password, mail,favCoffee);
 			ModelAndView mv = new ModelAndView("welcome");
 			mv.addObject("firstname", firstname);
 			mv.addObject("lastname", lastname);
@@ -75,10 +78,11 @@ public class CoffeeShopController {
 			mv.addObject("favoritecoffee", favCoffee);
 			mv.addObject("phonenumber",  phonenumber);	
 			mv.addObject("age", age);
+			mv.addObject("username", username);
 			mv.addObject("password", password);
 			mv.addObject("mail", mail);
 			
-			userDao.create(user);
+			userDao.createUser(user);
 		
 			return mv;
 		}
@@ -105,7 +109,7 @@ public class CoffeeShopController {
 		}
 		
 		@RequestMapping(value="/food/update", method=RequestMethod.POST)
-		public ModelAndView submitEditForm(Food food) {
+		public ModelAndView submitEditForm(MenuItem food) {
 			menuItemDao.update(food);
 			return new ModelAndView("admin-menu-list");
 		}
