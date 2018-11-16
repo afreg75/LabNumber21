@@ -13,7 +13,7 @@
 	
 	<h1><b>Bienvenidos a Lindo Coffee!</b></h1>
 	
-	<h2>Login</h2>
+	<h2><font><font color="peachpuff">Login</font></h2>
 	
 	<p class="message">${ message }</p>
 	

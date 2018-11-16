@@ -13,6 +13,13 @@
 
 <body>
 <div class = "container">
+
+<header>
+		<span><font color="black">
+			Hello ${ user.firstname } ${ user.lastname } 
+		</font></span>
+	</header>	
+	
 	<a class="btn btn-primary btn-sm"  href="/">Home</a>
 	
 	<center><h1 id="lindo">Lindo Coffee</h1></center>

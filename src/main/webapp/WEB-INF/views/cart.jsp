@@ -12,13 +12,20 @@
 </head>
 <body>
 <div class = "container">
+<header>
+		<span><font color="black">
+			Hello ${ user.firstname } ${ user.lastname } 
+		</font></span>
+	</header>	
 
 	<a class="btn btn-primary btn-sm"  href="/">Home</a>
 	
 	<center><h1 id="lindo">Lindo Coffee</h1></center>
 	
 	<h2>Shopping Cart</h2>
-		
+	
+	<form action="/mycart/add" method="post">
+			
 	<table  class="table table-sm">
 		<tr>
 
@@ -42,6 +49,7 @@
 		<a class="btn btn-primary" href="/menulist" role="button">Shop More</a>
 	
 		<a class="btn btn-primary"  role="button">Checkout</a>
+	</form>
 	</div>
 </body>
 </html>
