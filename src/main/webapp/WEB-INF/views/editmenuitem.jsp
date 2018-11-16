@@ -15,42 +15,42 @@
 		
 		<form method="post">
 			<!-- We need to keep the ID and submit it with the form, but we don't want the user to have to see it. -->
-			<input type="hidden" name="id" value="${food.id}" />
-			<div class="form-group">
+			<input type="hidden" name="id" value="${menuItem.id}" />
+		<div class="form-group">
 			<table class="table">
 		<div class="form-group">
 			<tr>
 				<th scope="row">Name</th>
-				<td><input type="text" name="name" autofocus/></td>
+				<td><input type="text" name="name" value= "${menuitem.name}" /></td>
 			</tr>
 			</div>
 			<div class="form-group">
 			<tr>
 				<th scope="row">Description</th>
-				<td><input type="text" name="description" /></td>
+				<td><input type="text" name="description" value="${menuitem.description}"/></td>
 			</tr>
 			</div>
 			<div class="form-group">
 			<tr>
 				<th scope="row">Qty</th>
-				<td><input type="text"name="qty" /></td>
+				<td><input type="text"name="qty" value="${menuitem.qty}"/></td>
 			</tr>
 			</div>
 			<div class="form-group">
 			<tr>
 				<th scope="row">Price</th>
-				<td><input type="text"name="price" /></td>
+				<td><input type="text"name="price" value="${menuitem.price}" /></td>
 			</tr>
 			</div>
 			<div class="form-group">
 			<tr>
 				<th scope="row">Category</th>
-				<td><input type="text"name="category" /></td>
+				<td><input type="text"name="category" value="${menuitem.category}"/></td>
 			</tr>
 			</div>
 		</table>
 		</div>
-		<button type="submit" class="btn btn-primary">Edit</button>
+		<button type="submit" class="btn btn-primary">Update</button>
 		<a class="btn link" href="/edit-coffee"></a>
 		
 		<a class="btn btn-primary" href="/admin/menulist" role="button">Cancel</a>

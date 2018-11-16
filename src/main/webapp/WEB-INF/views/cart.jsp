@@ -16,15 +16,15 @@
 		<span><font color="black">
 			Hello ${ user.firstname } ${ user.lastname } 
 		</font></span>
+		
+		<a href="/logout" role="button">Logout</a>
 	</header>	
 
-	<a class="btn btn-primary btn-sm"  href="/">Home</a>
-	
 	<center><h1 id="lindo">Lindo Coffee</h1></center>
 	
 	<h2>Shopping Cart</h2>
 	
-	<form action="/mycart/add" method="post">
+	
 			
 	<table  class="table table-sm">
 		<tr>
@@ -40,7 +40,7 @@
 				<td>${ cartItem.quantity }</td>
 				<td>${ cartItem.menuItem.price }</td>
 				<td>
-				<a href="/mycart/delete?id=${ cartItem.menuItem.id }" class="btn btn-primary btn-sm">Delete</a>
+				<a href="/mycart/delete?id=${ cartItem.id }" class="btn btn-primary btn-sm">Delete</a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -49,7 +49,7 @@
 		<a class="btn btn-primary" href="/menulist" role="button">Shop More</a>
 	
 		<a class="btn btn-primary"  role="button">Checkout</a>
-	</form>
+	
 	</div>
 </body>
 </html>

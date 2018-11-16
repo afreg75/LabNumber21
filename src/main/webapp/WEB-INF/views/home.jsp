@@ -14,8 +14,10 @@
 	<div class = "container">
 	<header>
 		<span><font color="peachpuff">
-			Hello ${ user.firstname } ${ user.lastname } 
-		</font></span>
+			Hello ${ user.firstname } ${ user.lastname }</font>
+			</span>
+			<a href="/logout" role="button">Logout</a>
+			
 	</header>	
 	
 <h1><b>Bienvenidos a Lindo Coffee!</b></h1>

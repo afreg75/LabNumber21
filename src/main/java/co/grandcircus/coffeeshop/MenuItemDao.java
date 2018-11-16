@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 //DAOs must be transactional in order to use the EntityManager to write.
 //This means that a transaction is created every time a method runs here.
@@ -39,5 +41,27 @@ public class MenuItemDao {
 		
 		public void update(MenuItem food) {
 			em.merge(food);
+		}
+		
+//		public MenuItem findByCategory(String category) {
+//			return em.find(MenuItem.class, findByCategory(category));
+//		}
+		
+		public List<MenuItem> findByCategory(String category) {
+			// HQL queries can have named parameters, such as :regex here.
+			// HQL queries use Java class and property names, not SQL table & column names.
+			return em.createQuery("FROM Food WHERE category = :category", MenuItem.class)
+					.setParameter("category", category)
+					.getResultList();
+		}
+		
+		public Object findByNameContainingIgnoreCase(String keyword) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public Object findAllCategories() {
+			// TODO Auto-generated method stub
+			return null;
 		}
 }

@@ -18,19 +18,32 @@
 		<span><font color="black">
 			Hello ${ user.firstname } ${ user.lastname } 
 		</font></span>
+		<a href="/logout" role="button">Logout</a>
 	</header>	
-	
-	<a class="btn btn-primary btn-sm"  href="/">Home</a>
 	
 	<center><h1 id="lindo">Lindo Coffee</h1></center>
 	
 	<h2>Menu List</h2>
 
 	<!--  a form will submit back to the same URL if no actions is specified. -->
-	<form>
-		<input name="category" placeholder="Category" />
-		<button>Filter</button>
-	</form>
+	<form class="form-inline" action="/menulist/category" autocomplete="off">
+		  <label class="sr-only" for="keyword">Keyword</label>
+		  <input type="text" value="${param.keyword}" class="form-control mb-2 mr-sm-2" id="keyword" name="keyword" placeholder="Keyword">
+		  
+		  <label class="sr-only" for="category">Category</label>
+		  <select class="form-control mb-2 mr-sm-2" id="category" name="category">
+		  	<option value="">Category</option>
+		  	<c:forEach items="${ categories }" var="cat">
+		  		<option <c:if test="${ cat eq param.category }">selected</c:if>>${ cat }</option>
+		  	</c:forEach>
+		  </select>
+		
+		  <button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+		  <c:if test="${not empty param.keyword or not empty param.category}">
+		    <%-- c:if determines whether its contents should show or not --%>
+		  	<a href="/menulist/category" class="btn btn-secondary mb-2">Clear</a>
+	  	  </c:if>
+		</form>
 
 	<table  class="table table-sm">
 		<tr>
@@ -47,7 +60,7 @@
 				<td>${ menuitem.price }</td>
 				<td>${ menuitem.description }</td>
 						<td>
-			<a href="/mycart?id=${ menuitem.id }" class="btn btn-primary btn-sm">Add</a>
+			<a href="/mycart/add?id=${ menuitem.id }" class="btn btn-primary btn-sm">Add</a>
 			</td>
 			</tr>
 		</c:forEach>

@@ -3,6 +3,7 @@ package co.grandcircus.coffeeshop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,14 +29,14 @@ public class CartItemController {
 					return new ModelAndView("redirect:/mycart");
 		}
 		
-		@RequestMapping("/add-to-cart")
+		@RequestMapping("/mycart/add")
 		public ModelAndView addToCart(@RequestParam("id") Long menuItemId) {
 		  MenuItem m = menuItemDao.findById(menuItemId);
 		  CartItem c = new CartItem();
 		  c.setQuantity(1);
 		  c.setMenuItem(m);
 		  cartItemDao.create(c);
-		  return new ModelAndView("redirect:/cart");
+		  return new ModelAndView("redirect:/mycart");
 		}
 
 }

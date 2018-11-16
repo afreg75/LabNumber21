@@ -17,8 +17,8 @@ public class CoffeeShopController {
 		@Autowired 
 		private UserDao userDao;
 		
-//		@Autowired
-//		private CartItemDao cartItemDao;
+		@Autowired
+		private CartItemDao cartItemDao;
 		
 		@RequestMapping("/")
 		public ModelAndView index() {
@@ -49,11 +49,11 @@ public class CoffeeShopController {
 				return mav;
 			}
 			
-			@RequestMapping("add-coffee")
-			public ModelAndView showAddForm() {
-			ModelAndView mav = new ModelAndView("addmenuitem");
-					return mav;
-			}
+		@RequestMapping("add-coffee")
+		public ModelAndView showAddForm() {
+		ModelAndView mav = new ModelAndView("addmenuitem");
+				return mav;
+		}
 			
 		
 		@RequestMapping("/welcome")
@@ -92,6 +92,25 @@ public class CoffeeShopController {
 					mav.addObject("list", menuItemDao.findAll());
 					return mav;
 		}
+		
+		@RequestMapping("/menulist/category")
+	
+		public ModelAndView listFood(
+				@RequestParam(value="keyword", required=false) String keyword,
+				@RequestParam(value="category", required=false) String category) {
+			ModelAndView mav = new ModelAndView("menu-list");
+			if (keyword != null && !keyword.isEmpty()) {
+				mav.addObject("foods", menuItemDao.findByNameContainingIgnoreCase(keyword));
+			} else if (category != null && !category.isEmpty()) {
+				mav.addObject("foods", menuItemDao.findByCategory(category));
+			} else {
+				mav.addObject("foods", menuItemDao.findAll());
+			}
+			// list of categories needed for <select>
+			mav.addObject("categories", menuItemDao.findAllCategories());
+			return mav;
+		}
+		
 		@RequestMapping("/menuitems/delete")
 		public ModelAndView delete(@RequestParam("id") Long id) {
 			ModelAndView mav = new ModelAndView("admin-menu-list");
@@ -103,7 +122,7 @@ public class CoffeeShopController {
 		@RequestMapping("/food/update")
 		public ModelAndView showEditForm(@RequestParam("id") Long id) {
 			ModelAndView mav = new ModelAndView("editmenuitem");
-			mav.addObject("food", menuItemDao.findById(id));
+			mav.addObject("menuitem", menuItemDao.findById(id));
 			mav.addObject("title", "Edit Food");
 			return mav;
 		}
@@ -111,9 +130,7 @@ public class CoffeeShopController {
 		@RequestMapping(value="/food/update", method=RequestMethod.POST)
 		public ModelAndView submitEditForm(MenuItem food) {
 			menuItemDao.update(food);
-			return new ModelAndView("admin-menu-list");
+			return new ModelAndView("redirect:/admin/menulist");
 		}
-		
-		
 		
 	}

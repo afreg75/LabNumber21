@@ -17,7 +17,8 @@
 			Hello ${ user.firstname } ${ user.lastname } 
 		</font></span>
 
-	<p><a class="btn btn-primary btn-sm"  href="/">Home</a></p>
+	<a href="/logout" role="button">Logout</a>
+	
 	
 	<center><h1 id="lindo">Lindo Coffee</h1></center>
 	
