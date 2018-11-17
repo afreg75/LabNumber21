@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,13 @@
 <link rel="stylesheet" href="finalreg.css" />
 <div class = "container">	
 <body>
+
+<header>
+<span><font color="black">
+			Hello ${ user.firstname } ${ user.lastname } 
+		</font></span>
+		<a href="/logout" role="button">Logout</a>
+	</header>	
 
 <center><h1 id="lindo">Lindo Coffee</h1></center>
 <p><b>Thank you for registering</b></p>
@@ -23,7 +31,7 @@
 
 <p>You will enjoy our Coffee! Your favorite coffee is ${favoritecoffee}</p>
 
-<a class = "btn btn-primary btn-xs"  href="/">Login</a>
+<a class = "btn btn-primary btn-xs"  href="/menulist">Shop</a>
 </body>
 </div>
 </html>

@@ -60,7 +60,7 @@ public class AuthoController {
 		return new ModelAndView("signup");
 	}
 
-	@PostMapping("/signup")
+	@PostMapping("/registration")
 	public ModelAndView submitSignupForm(
 			User user,
 			@RequestParam("confirm-password") String confirmPassword, 

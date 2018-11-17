@@ -41,7 +41,7 @@
 		  <button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 		  <c:if test="${not empty param.keyword or not empty param.category}">
 		    <%-- c:if determines whether its contents should show or not --%>
-		  	<a href="/menulist/category" class="btn btn-secondary mb-2">Clear</a>
+		  	<a href="/menulist" class="btn btn-secondary mb-2">Clear</a>
 	  	  </c:if>
 		</form>
 
